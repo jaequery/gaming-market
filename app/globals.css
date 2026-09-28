@@ -21,6 +21,9 @@
     sans-serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
+  /* Multiplies every text size below; 1 = original scale. */
+  --type-scale: 1.125;
+
   --col: 1200px;
   --gutter: 24px;
 }
@@ -40,7 +43,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 15px/1.55 var(--mono);
+  font: 400 calc(15px * var(--type-scale))/1.55 var(--mono);
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
@@ -124,7 +127,7 @@ th {
   font-family: var(--display);
   font-weight: 800;
   text-transform: uppercase;
-  font-size: clamp(40px, 5.4vw, 72px);
+  font-size: clamp(calc(40px * var(--type-scale)), calc(5.4vw * var(--type-scale)), calc(72px * var(--type-scale)));
   letter-spacing: -0.02em;
   line-height: 0.95;
 }
@@ -175,7 +178,7 @@ th {
   padding: 0 20px;
   border: 1px solid transparent;
   border-radius: 0;
-  font-size: 14px;
+  font-size: calc(14px * var(--type-scale));
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
@@ -231,7 +234,7 @@ th {
 .footer-mark {
   font-family: var(--display);
   font-weight: 800;
-  font-size: 32px;
+  font-size: calc(32px * var(--type-scale));
   line-height: 1;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -316,7 +319,7 @@ th {
   color: var(--on-accent);
   font-family: var(--mono);
   font-weight: 600;
-  font-size: 18px;
+  font-size: calc(18px * var(--type-scale));
   letter-spacing: 0.02em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -410,7 +413,7 @@ th {
   border: 1px solid var(--border);
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(56px, 7vw, 96px);
+  font-size: clamp(calc(56px * var(--type-scale)), calc(7vw * var(--type-scale)), calc(96px * var(--type-scale)));
   letter-spacing: -0.02em;
   line-height: 1;
   /* 2px scanlines over a flat tone */
@@ -443,7 +446,7 @@ th {
   margin: 4px 0 8px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: 30px;
+  font-size: calc(30px * var(--type-scale));
   line-height: 0.95;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -512,7 +515,7 @@ th {
 .digest-table th {
   padding: 0 16px 12px 0;
   color: var(--band-muted);
-  font-size: 13px;
+  font-size: calc(13px * var(--type-scale));
   text-align: left;
 }
 .digest-table td {
@@ -533,7 +536,7 @@ th {
 .col-title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(20px, 2.4vw, 30px);
+  font-size: clamp(calc(20px * var(--type-scale)), calc(2.4vw * var(--type-scale)), calc(30px * var(--type-scale)));
   line-height: 1;
   text-transform: uppercase;
 }
@@ -544,7 +547,7 @@ th {
 .is-quiet .col-title {
   color: var(--band-muted);
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: calc(15px * var(--type-scale));
   font-weight: 400;
   line-height: 1.55;
   text-transform: none;
@@ -569,7 +572,7 @@ th {
 .city-name {
   font-family: var(--display);
   font-weight: 800;
-  font-size: 40px;
+  font-size: calc(40px * var(--type-scale));
   line-height: 0.95;
   text-transform: uppercase;
 }
@@ -599,7 +602,7 @@ th {
 .stat-figure {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(96px, 12vw, 168px);
+  font-size: clamp(calc(96px * var(--type-scale)), calc(12vw * var(--type-scale)), calc(168px * var(--type-scale)));
   line-height: 0.82;
   letter-spacing: -0.04em;
 }
@@ -638,7 +641,7 @@ th {
   padding: 6px 10px;
   background: var(--accent);
   color: var(--on-accent);
-  font-size: 13px;
+  font-size: calc(13px * var(--type-scale));
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -646,7 +649,7 @@ th {
 .plan-name {
   font-family: var(--display);
   font-weight: 800;
-  font-size: 36px;
+  font-size: calc(36px * var(--type-scale));
   line-height: 0.95;
   text-transform: uppercase;
 }
@@ -659,7 +662,7 @@ th {
 .plan-amount {
   font-family: var(--display);
   font-weight: 800;
-  font-size: 88px;
+  font-size: calc(88px * var(--type-scale));
   line-height: 0.82;
   letter-spacing: -0.03em;
 }
@@ -703,7 +706,7 @@ th {
   grid-column: 1 / span 5;
 }
 .signup-grid .display {
-  font-size: clamp(48px, 7vw, 96px);
+  font-size: clamp(calc(48px * var(--type-scale)), calc(7vw * var(--type-scale)), calc(96px * var(--type-scale)));
   margin-bottom: 24px;
 }
 .signup-form {
@@ -723,7 +726,7 @@ th {
 }
 .field label,
 .interests legend {
-  font-size: 13px;
+  font-size: calc(13px * var(--type-scale));
   color: var(--band-text);
 }
 .field input {
@@ -734,14 +737,14 @@ th {
   border-radius: 0;
   background: var(--band);
   color: var(--band-text);
-  font: 400 15px/1 var(--mono);
+  font: 400 calc(15px * var(--type-scale))/1 var(--mono);
 }
 .field input[aria-invalid="true"] {
   border-color: var(--accent-on-dark);
 }
 .field-error {
   color: var(--accent-on-dark);
-  font-size: 13px;
+  font-size: calc(13px * var(--type-scale));
 }
 .interests {
   border: 0;
@@ -760,7 +763,7 @@ th {
 .chip {
   position: relative;
   cursor: pointer;
-  font-size: 13px;
+  font-size: calc(13px * var(--type-scale));
 }
 .chip input {
   position: absolute;
@@ -825,7 +828,7 @@ th {
   gap: 24px;
 }
 .footer-mark {
-  font-size: 56px;
+  font-size: calc(56px * var(--type-scale));
 }
 .footer-links {
   display: flex;
@@ -840,7 +843,7 @@ th {
   padding-top: 16px;
   border-top: 1px dotted var(--band-muted);
   color: var(--band-muted);
-  font-size: 13px;
+  font-size: calc(13px * var(--type-scale));
 }
 
 /* ---------- Responsive ---------- */
@@ -887,12 +890,12 @@ th {
     gap: 12px;
   }
   .header-mark {
-    font-size: 28px;
+    font-size: calc(28px * var(--type-scale));
   }
   .header-cta {
     height: 44px;
     padding: 0 14px;
-    font-size: 13px;
+    font-size: calc(13px * var(--type-scale));
   }
   .hero-inner {
     min-height: 0;
@@ -913,7 +916,7 @@ th {
   }
   .stamp-inner {
     padding: 10px 14px;
-    font-size: 14px;
+    font-size: calc(14px * var(--type-scale));
   }
   .field-row {
     grid-template-columns: 1fr;
@@ -926,35 +929,44 @@ th {
   }
   .digest-table td {
     padding: 14px 10px 14px 0;
-    font-size: 13px;
+    font-size: calc(13px * var(--type-scale));
   }
   .digest-table .col-title {
-    font-size: 20px;
+    font-size: calc(20px * var(--type-scale));
   }
   .is-quiet .col-title {
-    font-size: 13px;
+    font-size: calc(13px * var(--type-scale));
   }
 }
 
 @media (max-width: 480px) {
+  .tab {
+    flex: 1 1 0;
+    min-width: 0;
+    height: auto;
+    min-height: 48px;
+    padding: 8px 12px;
+    line-height: 1.2;
+    white-space: normal;
+  }
   .feed-grid {
     gap: 40px 16px;
   }
   .event-title {
-    font-size: 22px;
+    font-size: calc(22px * var(--type-scale));
   }
   .event-meta,
   .event-source {
-    font-size: 13px;
+    font-size: calc(13px * var(--type-scale));
   }
   .stats {
     gap: 32px 16px;
   }
   .stat-figure {
-    font-size: 96px;
+    font-size: calc(96px * var(--type-scale));
   }
   .footer-mark {
-    font-size: 44px;
+    font-size: calc(44px * var(--type-scale));
   }
 }
 
